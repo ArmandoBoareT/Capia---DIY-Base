@@ -84,7 +84,7 @@ export default {
 export default {
   
   async asyncData({ $axios, query }) {
-    const artigo = await $axios.$get('/api/artigos/' + query.id + '/')
+    const artigo = await $axios.$get('/artigos/' + query.id + '/')
     return { artigo }
   }
   

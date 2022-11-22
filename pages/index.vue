@@ -60,7 +60,7 @@
 export default {
   
   async asyncData({ $axios }) {
-    const artigos = await $axios.$get('/api/artigos/')
+    const artigos = await $axios.$get('/artigos/')
     return { artigos }
   }
   
