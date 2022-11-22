@@ -3,9 +3,17 @@
     "layouts/default.vue": [
       {
         "id": "f769a24b-8f1e-40f7-8ecb-abdb81b78817",
-        "line": 35,
-        "version": 517,
-        "index": 1115
+        "line": 31,
+        "version": 850,
+        "index": 965
+      }
+    ],
+    "plugins/f-date.js": [
+      {
+        "id": "28ce319d-fe6a-427c-9917-05c75821116c",
+        "line": 16,
+        "version": 1,
+        "index": 489
       }
     ]
   }

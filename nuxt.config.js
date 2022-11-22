@@ -3,7 +3,7 @@ export default {
   head: {
     title: 'Nuxt - Exemplos',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'pt_BR'
     },
     meta: [
       { charset: 'utf-8' },
@@ -28,7 +28,18 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~/plugins/firebase', mode: 'client' },
+    { src: '~/plugins/axios' },
+    { src: '~/plugins/f-date' },
+    { src: '~/plugins/f-currency' }
   ],
+
+  router: {
+    middleware: [
+        //'get-current-user',
+        'check-auth'
+    ]
+  },    
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -42,7 +53,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/buefy
     'nuxt-buefy',
-    'nuxt-fontawesome'
+    'nuxt-fontawesome',
+    '@nuxtjs/axios',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -54,6 +66,40 @@ export default {
     defaultIconPack: 'fas',
     defaultIconComponent: 'font-awesome-icon'
   },  
+
+  
+  proxy: {
+    '/api': {
+        //target: `http://localhost:8000`,
+        target: 'https://dijango-robso.armandoboaretto.repl.co/',
+        changeOrigin: true,
+        ws: true,
+        credentials: true,
+        xcsrfCookieName: "csrftoken",
+        xcsrfHeaderName: "X-CSRFToken"          
+    },
+  },
+
+  axios: {
+      proxy: true,
+      prefix: '/api',
+      //baseURL: 'http://localhost:8000/api/',
+      progress: true,
+      credentials: true,
+      debug: true,
+      xcsrfCookieName: "csrftoken",
+      xcsrfHeaderName: "X-CSRFToken"      
+  },
+
+  /*
+  axios: {
+    //baseURL: 'https://backend-example.robsonjoo.repl.co/', // Used as fallback if no runtime config is provided
+    baseURL: 'http://localhost:8000/', // Used as fallback if no runtime config is provided
+    withCredentials: true,
+    xsrfCookieName: "csrftoken",
+    xsrfHeaderName: "X-CSRFToken"
+  },
+  */  
   
   fontawesome: {
     imports: [

@@ -1,7 +1,7 @@
 <template>
   <div class="container is-fluid">
 
-    <b-navbar style="height: 90px" shadow="true">
+    <b-navbar style="height: 90px" >
         <template #brand>
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
                 <b-image :src="require('@/assets/capia_diy.png')"
@@ -12,11 +12,7 @@
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
                 Home
             </b-navbar-item>
-          
-            <b-navbar-item tag="router-link" :to="{ path: '/sobre' }">
-                Sobre
-            </b-navbar-item>
-          
+      
             <b-navbar-item tag="router-link" :to="{ path: '/artigos' }" >
                 Artigos
             </b-navbar-item>
@@ -39,70 +35,70 @@
             <b-navbar-item tag="div">
                 <div class="buttons">
                     <a class="button is-primary">
-                        <strong>Cadastre-se</strong>
+                        <b-navbar-item tag="router-link" :to="{ path: '/cadastro'}">
+              Cadastre-se
+            </b-navbar-item>
                     </a>
                     <a class="button is-light">
-                        Login
+                    <b-navbar-item tag="router-link" :to="{ path: '/login'}">
+              Login
+            </b-navbar-item>
+                      
                     </a>
                 </div>
             </b-navbar-item>
         </template>
     </b-navbar>
-    
-<div class="columns mt-4">
-    <div class="column is-12">
-      
-        <div id="divBusca">
-         
-          <b-input placeholder="Search..."
-                type="search"
-                icon="magnify"
-                icon-clickable
-                @icon-click="searchIconClick">
-            </b-input>
-          
-        </div>
-    </div>
-</div>
-    <Nuxt/>
+    <nuxt/>
 
     <div class="container my-15">
 
-     <footer class="bg-dark text-center text-white">
+<!--
+   <footer class="bg-dark text-center text-white">
        <nav class="level">
+
+
+
   <div class="level-item has-text-centered">
     <div>
       <p class="heading">Instagram</p>
       <p class="title">
-        <b-icon
-                pack="far"
-                class="fa-brands fa-instagram"
-                size="is-small">
-            </b-icon>
+       <a href="https://www.instagram.com/capiadiy/" target="_blank"> 
+        <figure class="image is-32x32">
+         <b-image :src="require('@/assets/igicon.png')"></b-image> 
+       </figure>
+       </a>
       </p>
     </div>
   </div>
-  <div class="level-item has-text-centered">
+<div class="level-item has-text-centered">
     <div>
       <p class="heading">Twitch</p>
-      <p class="title">123</p>
+    <a href="https://twitch.tv/capiadiy" target="_blank"> 
+        <figure class="image is-32x32">
+         <b-image :src="require('@/assets/twitch.png')"></b-image> 
+       </figure>
+       </a>  
+    </p>
     </div>
   </div>
   <div class="level-item has-text-centered">
     <div>
       <p class="heading">All the flavors</p>
-      <p class="title">456K</p>
+       <a href="https://alltheflavors.com/users/capiadiy" target="_blank"> 
+        <figure class="image is-32x32">
+         <b-image :src="require('@/assets/dropper.png')"></b-image> 
+       </figure>
+       </a>  
     </div>
   </div>
-  <div class="level-item has-text-centered">
-    <div>
-      <p class="heading">Likes</p>
-      <p class="title">789</p>
-    </div>
-  </div>
-</nav>
+     
+  
+         
+        </nav>
    
-     </footer>
+    </footer>  -->
+      
   
     </div>      
     
